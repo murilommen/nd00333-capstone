@@ -63,7 +63,6 @@ The best performing run came out with an accuracy of `0.92`, being the hyperpara
 ![](imgs/HD-best.png)
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
 The deployment of model was made using the one gotten from the hyperparameter tuning approach. It was chosen to deploy via ACI to have it available not only locally with a better sense on what would be its Production reality. In order to query the results with the Python requests library, the following code shall be written:
 
