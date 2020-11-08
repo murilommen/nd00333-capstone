@@ -41,17 +41,15 @@ The number of minutes for the experiment timeout and the maximum number of cores
 
 The best performing model that came out of the Automated Machine Learning module was the VotingEnsemble with the Accuracy of `0.85`. When analyzing the other metrics that came along the AutoML, maybe a better approach would have been to use a different target metric, such as ROC-AUC or Recall. Also, it would be a good idea to use this specific model and tune its hyperparameters to verify if it would produce an even better model.
 
-![RunDetails]('imgs/automl_widget.png')
+![](imgs/automl_widget.png)
 
-![Best Model]('imgs/best_automl_model.png')
+![](imgs/best_automl_model.png)
 
 ## Hyperparameter Tuning
 For the Hyperparameter Tuning section, the [ExtraTreesClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html) algorithm was chosen. In general, tree algorithms are less sensitive to scale and tend to make a good generalization of features without previous treatment. The Extreme trees classifier also handles well by itself the control of over-fitting, by averaging the results from the randomized decision trees (a.k.a. Extreme Trees).
 
 The hyperparameters chosen to be optimized were `n_estimators` and `min_weight_fraction_leaf`. 
-
 The first one stands for the number of trees in the forest - and defaults to `100`. The range varied within a discrete "coice" range from `5` to `200`. 
-
 The second one correspond to the minimum weighted fraction that is applied to a leaf node. It was chosen from a **uniformly** distributed range between `0.0` and `0.5`.
 
 The parameter sampling method chosen to optimize the choice was the Bayesian method, with a total of 40 runs, as suggested by the [Azure ML Documentation](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters).
@@ -60,9 +58,9 @@ The parameter sampling method chosen to optimize the choice was the Bayesian met
 ### Results
 The best performing run came out with an accuracy of `0.92`, being the hyperparameters tuned with the follwing values: `n_estimators: 106` and `min_weight_fraction_leaf: 0.1509`. Although this is a significant improvement over what we got with the Automated ML approach, it still can be further improved by perhaps selecting a different metric as the optimization goal. Some feature engineering could also help the model stand out. 
 
-![HD-RunDetails]('imgs/HD-run.png')
+![](imgs/HD-run.png)
 
-![HD-best]('imgs/HD-best.png')
+![](imgs/HD-best.png)
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
@@ -103,4 +101,4 @@ print(x.json())
 
 ## Screen Recording
 
-![]('imgs/screen-cast.gif')
+![](imgs/screen-cast.gif)
