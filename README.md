@@ -3,7 +3,13 @@
 This project intends to train a Classifier for the UCI Heart Disease dataset by using two different approaches with Azure Machine Learning: Automated Machine Learning and a  Hyperparameter Tuned model with HyperDrive.
 
 ## Project Set Up and Installation
-All of the required libraries come pre-installed on the Azure Machine Learning Compute Instance. In order to reproduce it, simply open up, for example, a `STANDARD_DS3_V2` instance, clone this repo and run the notebook steps. 
+All of the required libraries come pre-installed on the Azure Machine Learning Compute Instance. In order to reproduce it, simply open up, for example, a `STANDARD_DS3_V2` instance, clone this repo and run the notebook steps. To setup the environment used, simply type
+
+```python
+
+my_env = Environment.load_from_directory("environment_files")
+
+```
 
 ## Dataset
 
@@ -41,7 +47,11 @@ The number of minutes for the experiment timeout and the maximum number of cores
 
 The best performing model that came out of the Automated Machine Learning module was the VotingEnsemble with the Accuracy of `0.85`. When analyzing the other metrics that came along the AutoML, maybe a better approach would have been to use a different target metric, such as ROC-AUC or Recall. Also, it would be a good idea to use this specific model and tune its hyperparameters to verify if it would produce an even better model.
 
+Below we can see that the VotingEnsemble algorithm was the best performing one, along with the following approaches. It is nice to see that the third model on the list shows it tried a `StandardScaler` with a `RandomForest` model, whithout explicitly telling it to do so. 
+
 ![](imgs/automl_widget.png)
+
+And the best model - Voting Ensemble - can be dumped to a joblib file and registered onto Azure ML with the following commands
 
 ![](imgs/best_automl_model.png)
 
@@ -56,9 +66,13 @@ The parameter sampling method chosen to optimize the choice was the Bayesian met
 
 
 ### Results
-The best performing run came out with an accuracy of `0.92`, being the hyperparameters tuned with the follwing values: `n_estimators: 106` and `min_weight_fraction_leaf: 0.1509`. Although this is a significant improvement over what we got with the Automated ML approach, it still can be further improved by perhaps selecting a different metric as the optimization goal. Some feature engineering could also help the model stand out. 
+The best performing run came out with an accuracy of `0.90`, being the hyperparameters tuned with the follwing values: `n_estimators: 106` and `min_weight_fraction_leaf: 0.1509`. Although this is a significant improvement over what we got with the Automated ML approach, it still can be further improved by perhaps selecting a different metric as the optimization goal. Some feature engineering could also help the model stand out. 
+
+Here we can see how the model was found by successfully searching for the best hyperparameters, with the top metrics found. 
 
 ![](imgs/HD-run.png)
+
+And below we can see which were the parameters that generated the best model
 
 ![](imgs/HD-best.png)
 
@@ -97,6 +111,10 @@ x = requests.post(url, data = json.dumps(testing_data), headers=headers)
 print(x.json())
 
 ```
+
+Here we can see a screenshot of the service up and running with the *Healthy* status. Since it was chosen to make the deployment with ACI, by passing this URI as the url argument, it was possible to access the model and use it from anywhere.
+
+![](imgs/endpoint_active.png)
 
 ## Screen Recording
 
