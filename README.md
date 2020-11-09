@@ -114,9 +114,12 @@ print(x.json())
 
 Here we can see a screenshot of the service up and running with the *Healthy* status. Since it was chosen to make the deployment with ACI, by passing this URI as the url argument, it was possible to access the model and use it from anywhere.
 
-![](imgs/endpoint_active.png)
+![](imgs/endpoint-active.png)
 
 OBS.: You can check the webservice working on a GIF on the `imgs/` directory
 
 ## Screen recording
-[![](https://i9.ytimg.com/vi_webp/ZJwoP8it-O8/mqdefault.webp?time=1604848500000&sqp=CPSWoP0F&rs=AOn4CLBSnG7lvzZygSyH9tWGIzvJTXyWXA)](https://youtu.be/ZJwoP8it-O8)
+
+Finally, there is a screen recording made to better explain the work involved and the working deployed model below on Youtube.
+
+[![](https://i9.ytimg.com/vi_webp/ZJwoP8it-O8/mqdefault.webp?time=1604923800000&sqp=CJjjpP0F&rs=AOn4CLAEFMoQKZqwIqrvSTXlb6-uQph34g)](https://youtu.be/ZJwoP8it-O8)
