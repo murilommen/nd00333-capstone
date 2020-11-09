@@ -116,6 +116,7 @@ Here we can see a screenshot of the service up and running with the *Healthy* st
 
 ![](imgs/endpoint_active.png)
 
-## Screen Recording
+OBS.: You can check the webservice working on a GIF on the `imgs/` directory
 
-![](imgs/screen-cast.gif)
+## Screen recording
+[![](https://i9.ytimg.com/vi_webp/ZJwoP8it-O8/mqdefault.webp?time=1604848500000&sqp=CPSWoP0F&rs=AOn4CLBSnG7lvzZygSyH9tWGIzvJTXyWXA)](https://youtu.be/ZJwoP8it-O8)
