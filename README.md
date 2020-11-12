@@ -120,4 +120,4 @@ OBS.: You can check the webservice working on a GIF on the `imgs/` directory
 
 ## Screen recording
 
-Finally, there is a screen recording made to better explain the work involved and the working deployed model on Youtube ![here](https://youtu.be/ZJwoP8it-O8)
+Finally, there is a screen recording made to better explain the work involved and the working deployed model on Youtube [here](https://youtu.be/ZJwoP8it-O8)
